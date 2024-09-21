@@ -32,14 +32,11 @@ const InitialLayout = () => {
     const inAuthGroup = segments[0] === "(Home)";
     console.log("In Auth Group:", inAuthGroup);
 
-    if (authState?.authenticated && !inAuthGroup) {
+    if (authState?.authenticated && inAuthGroup) {
       console.log("Redirecting to home, user is authenticated");
       router.replace("/(Home)");
     } else if (!authState?.authenticated && !inAuthGroup) {
       console.log("Not authenticated, redirecting to login");
-
-      //reload screen
-      client?.disconnectUser();
       router.replace("/");
     }
   }, [authState, initialized, segments]);
