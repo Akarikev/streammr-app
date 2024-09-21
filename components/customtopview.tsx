@@ -27,11 +27,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 10,
     zIndex: 1,
+    fontFamily: "Inter-Black",
   },
   topText: {
     color: "white",
     fontSize: 14,
     padding: 10,
+    fontFamily: "Inter-Black",
   },
 });
 

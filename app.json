@@ -14,7 +14,11 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bitcode": false
+      "bitcode": false,
+      "bundleIdentifier": "com.akarikev.streamrapp",
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -33,7 +37,8 @@
         "android.permission.SYSTEM_ALERT_WINDOW",
         "android.permission.WAKE_LOCK"
       ],
-      "package": "com.akarikev.streamrapp"
+      "package": "com.akarikev.streamrapp",
+      "runtimeVersion": "1.0.0"
     },
     "web": {
       "bundler": "metro",
@@ -70,6 +75,9 @@
       "eas": {
         "projectId": "eb1dc089-dae7-41d9-a1c7-791bce43a980"
       }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/eb1dc089-dae7-41d9-a1c7-791bce43a980"
     }
   }
 }

@@ -78,7 +78,15 @@ const Home = () => {
         <Text style={styles.primaryButtonText}>Join Call by ID</Text>
       </TouchableOpacity>
 
-      <Text style={{ fontSize: 21, fontWeight: "bold", color: "#0A7EA4" }}>
+      <Text
+        style={{
+          fontSize: 21,
+          // fontWeight: "bold",
+          fontWeight: "600",
+          color: "#0A7EA4",
+          // fontFamily: "Inter-Black",
+        }}
+      >
         No Meetings? Join a Public Room
       </Text>
       <Rooms />
@@ -125,6 +133,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: 20,
     backgroundColor: "#F9FBFC",
+    // fontFamily: "Inter-Black",
   },
   primaryButton: {
     flexDirection: "row",
@@ -134,16 +143,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     borderRadius: 50,
     marginVertical: 20,
+    fontFamily: "Inter-Black",
   },
   primaryButtonText: {
     fontSize: 18,
     color: "white",
     fontWeight: "600",
     marginLeft: 10,
+    fontFamily: "Inter-Black",
   },
   roomContainer: {
     width: WIDTH * 0.9,
     marginTop: 20,
+    fontFamily: "Inter-Black",
   },
   roomCard: {
     backgroundColor: "#fff",
@@ -157,17 +169,20 @@ const styles = StyleSheet.create({
     elevation: 8,
     borderLeftWidth: 5,
     borderLeftColor: "#0A7EA4",
+    fontFamily: "Inter-Black",
   },
   roomHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: 15,
+    fontFamily: "Inter-Black",
   },
   roomName: {
     fontSize: 20,
     fontWeight: "600",
     color: "#333",
+    fontFamily: "Inter-Black",
   },
   secondaryButton: {
     backgroundColor: "#E9F7FA",
@@ -175,17 +190,20 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
     borderRadius: 10,
     alignItems: "center",
+    fontFamily: "Inter-Black",
   },
   buttonText: {
     fontSize: 16,
     color: "#0A7EA4",
     fontWeight: "600",
+    fontFamily: "Inter-Black",
   },
   modalContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "rgba(0, 0, 0, 0.5)",
+    fontFamily: "Inter-Black",
   },
   modalView: {
     width: WIDTH * 0.8,
@@ -198,10 +216,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
+    fontFamily: "Inter-Black",
   },
   modalText: {
     fontSize: 18,
     marginBottom: 15,
+    fontFamily: "Inter-Black",
   },
   input: {
     width: "100%",
@@ -210,23 +230,28 @@ const styles = StyleSheet.create({
     borderColor: "#ddd",
     borderRadius: 10,
     marginBottom: 20,
+    fontFamily: "Inter-Black",
   },
   modalButtonContainer: {
     flexDirection: "row",
     justifyContent: "space-around",
     width: "100%",
+    fontFamily: "Inter-Black",
   },
   modalButton: {
     paddingVertical: 10,
     paddingHorizontal: 20,
     backgroundColor: "#0A7EA4",
     borderRadius: 10,
+    fontFamily: "Inter-Black",
   },
   modalButtonText: {
     color: "white",
     fontSize: 16,
+    fontFamily: "Inter-Black",
   },
   cancelButton: {
     backgroundColor: "red",
+    fontFamily: "Inter-Black",
   },
 });

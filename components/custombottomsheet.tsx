@@ -24,7 +24,12 @@ const CustomBottomSheet = forwardRef<Ref, Props>((props, ref) => {
       <BottomSheetView style={styles.contentContainer}>
         <Text style={styles.containerHeadline}>Chat</Text>
         <Text
-          style={{ color: "blue", fontSize: 15, textAlign: "center" }}
+          style={{
+            color: "blue",
+            fontFamily: "Inter-Black",
+            fontSize: 15,
+            textAlign: "center",
+          }}
           selectable
         >
           CHAT id: {props.channelId}
@@ -45,12 +50,14 @@ const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
     paddingBottom: 20,
+    fontFamily: "Inter-Black",
   },
   containerHeadline: {
     fontSize: 24,
     fontWeight: "600",
     padding: 20,
     textAlign: "center",
+    fontFamily: "Inter-Black",
   },
 });
 

@@ -148,12 +148,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     flexDirection: "row", // Default row for landscape mode, changed dynamically
+    fontFamily: "Inter-Black",
   },
   spinnerContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#f5f5f5",
+    fontFamily: "Inter-Black",
   },
   chatContainer: {
     flex: 1,
@@ -161,5 +163,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
+    fontFamily: "Inter-Black",
   },
 });

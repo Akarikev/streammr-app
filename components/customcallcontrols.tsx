@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
     borderColor: "#fff",
     borderWidth: 2,
     zIndex: 5,
+    fontFamily: "Inter-Black",
   },
 });
 

@@ -80,6 +80,7 @@ const App = () => {
             borderBottomColor: "#0a7ea4",
             borderBottomWidth: 1,
             marginBottom: 30,
+            fontFamily: "Inter-Black",
           }}
         />
         <TextInput
@@ -93,6 +94,7 @@ const App = () => {
             marginTop: 20,
             borderBottomColor: "#0a7ea4",
             borderBottomWidth: 1,
+            fontFamily: "Inter-Black",
           }}
         />
 
@@ -112,6 +114,7 @@ const App = () => {
               color: "white",
               fontSize: 18,
               fontWeight: "600",
+              fontFamily: "Inter-Black",
             }}
           >
             Sign In
@@ -120,7 +123,12 @@ const App = () => {
 
         <Text
           onPress={onSignUpPressed}
-          style={{ textAlign: "center", fontSize: 17, color: "#074eab" }}
+          style={{
+            textAlign: "center",
+            fontFamily: "Inter-Black",
+            fontSize: 17,
+            color: "#074eab",
+          }}
         >
           Don't have an account, Sign Up
         </Text>
@@ -137,11 +145,13 @@ const styles = StyleSheet.create({
     padding: 20,
     paddingHorizontal: WIDTH > HEIGHT ? "30%" : "auto",
     justifyContent: "center",
+    fontFamily: "Inter-Black",
   },
   header: {
     fontSize: 30,
     textAlign: "center",
     marginBottom: 10,
+    fontFamily: "Inter-Black",
   },
 
   sbHeader: {
@@ -149,5 +159,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 40,
     color: "#0a7ea4",
+    fontFamily: "Inter-Black",
   },
 });
