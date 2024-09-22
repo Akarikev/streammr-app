@@ -16,6 +16,10 @@
       },
       "channel": "preview"
     },
+
+    "preview3": {
+      "developmentClient": true
+    },
     "production": {
       "autoIncrement": true,
       "channel": "production"
