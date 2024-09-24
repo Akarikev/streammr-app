@@ -11,7 +11,7 @@ import { Link } from "expo-router";
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text>Streammr Test</Text>
+      <Text>Streammr Test #</Text>
 
       <View style={{ marginTop: 20, width: "100%" }}>
         <Link href="/(Home)" asChild>

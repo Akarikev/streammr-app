@@ -16,7 +16,7 @@ const InitialLayout = () => {
 
   useEffect(() => {
     const user: User = {
-      id: "jw9q1zccn6k", //generated ID
+      id: "4l442ekobwr", //generated ID
     };
 
     try {
@@ -25,7 +25,7 @@ const InitialLayout = () => {
         apiKey: STREAM_KEY! as string,
         user,
         token:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoianc5cTF6Y2NuNmsifQ.Z41C5lg_roXDb_OEQzZwCl0rVuFVie9GdLnqKqAVCw0", //generated token
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNGw0NDJla29id3IifQ.xkZPCHQtOek84X4R8eNkPMh1AKjMarShLRzbt8ha6bM", //generated token
       });
 
       setClient(client);
