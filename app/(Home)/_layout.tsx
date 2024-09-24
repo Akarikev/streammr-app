@@ -1,14 +1,17 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { Stack } from "expo-router";
+import { router, Stack } from "expo-router";
 import { TouchableOpacity } from "react-native";
 
 import AntDesign from "@expo/vector-icons/AntDesign";
-import { useAuth } from "@/hooks/authcontext";
 
 const Layout = () => {
-  const { onLogout } = useAuth();
+  // const { onLogout } = useAuth();
 
+  const onLogout = () => {
+    console.log("Logout");
+    router.navigate("/");
+  };
   return (
     <Stack
       screenOptions={{

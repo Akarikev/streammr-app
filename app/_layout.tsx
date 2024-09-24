@@ -1,5 +1,4 @@
-import { AuthProvider, useAuth } from "@/hooks/authcontext";
-import { Slot, Stack, useRouter, useSegments } from "expo-router";
+import { Slot, Stack } from "expo-router";
 import React, { useState, useEffect } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import {
@@ -8,60 +7,32 @@ import {
   User,
 } from "@stream-io/video-react-native-sdk";
 import Toast from "react-native-toast-message";
+import { OverlayProvider } from "stream-chat-expo";
 
 const STREAM_KEY = process.env.EXPO_PUBLIC_STREAM_ACCESS_KEY;
 
-import { OverlayProvider } from "stream-chat-expo";
-import { ToastAndroid } from "react-native";
-
 const InitialLayout = () => {
-  const { authState, initialized } = useAuth();
-  const segments = useSegments();
-  const router = useRouter();
   const [client, setClient] = useState<StreamVideoClient | null>(null);
 
   useEffect(() => {
-    // Log for debugging
-    console.log("AuthState:", authState);
-    console.log("Initialized:", initialized);
+    const user: User = {
+      id: "jw9q1zccn6k", //generated ID
+    };
 
-    if (!initialized) {
-      return;
+    try {
+      console.log("Creating client for StreamVideo...");
+      const client = new StreamVideoClient({
+        apiKey: STREAM_KEY! as string,
+        user,
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoianc5cTF6Y2NuNmsifQ.Z41C5lg_roXDb_OEQzZwCl0rVuFVie9GdLnqKqAVCw0", //generated token
+      });
+
+      setClient(client);
+    } catch (error) {
+      console.log("Error creating client:", error);
     }
-
-    const inAuthGroup = segments[0] === "(Home)";
-    console.log("In Auth Group:", inAuthGroup);
-
-    if (authState?.authenticated && !inAuthGroup) {
-      console.log("Redirecting to home, user is authenticated");
-      router.replace("/(Home)");
-    } else if (!authState?.authenticated && !inAuthGroup) {
-      console.log("Not authenticated, redirecting to login");
-      router.replace("/");
-    }
-  }, [authState, initialized, segments]);
-
-  useEffect(() => {
-    if (authState?.authenticated && authState.token) {
-      console.log("Creating client for StreamVideo...", authState);
-
-      const user: User = {
-        id: authState.user_id!,
-      };
-
-      try {
-        const client = new StreamVideoClient({
-          apiKey: STREAM_KEY! as string,
-          user,
-          token: authState.token,
-        });
-
-        setClient(client);
-      } catch (error) {
-        console.log("Error creating client:", error);
-      }
-    }
-  }, [authState]);
+  }, []);
 
   return (
     <>
@@ -90,11 +61,9 @@ const InitialLayout = () => {
 
 const RootLayout = () => {
   return (
-    <AuthProvider>
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <InitialLayout />
-      </GestureHandlerRootView>
-    </AuthProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <InitialLayout />
+    </GestureHandlerRootView>
   );
 };
 

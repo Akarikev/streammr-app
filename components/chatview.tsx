@@ -20,7 +20,7 @@ const ChatView = ({ channelId }: Props) => {
   const chatClient = StreamChat.getInstance<DefaultStreamChatGenerics>(
     STREAM_KEY!
   ); // Use DefaultGenerics here
-  const { authState } = useAuth();
+  // const { authState } = useAuth();
   const [chatChannel, SetChatChannel] = useState<
     ChannelType<DefaultStreamChatGenerics> | undefined
   >(undefined); // Ensure types match
@@ -31,10 +31,13 @@ const ChatView = ({ channelId }: Props) => {
 
     const connectToChat = async () => {
       try {
-        const user = { id: authState?.user_id! };
+        const user = { id: "jw9q1zccn6k" };
 
         // Connect user to chat client
-        await chatClient.connectUser(user, authState?.token!);
+        await chatClient.connectUser(
+          user,
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoianc5cTF6Y2NuNmsifQ.Z41C5lg_roXDb_OEQzZwCl0rVuFVie9GdLnqKqAVCw0"
+        );
 
         // Create and watch the channel
         const channel = chatClient.channel("messaging", channelId);
@@ -55,7 +58,7 @@ const ChatView = ({ channelId }: Props) => {
       chatChannel?.stopWatching();
       chatClient.disconnectUser(); // Ensure the user is disconnected cleanly
     };
-  }, [authState, channelId]);
+  }, [channelId]);
 
   return (
     <>
